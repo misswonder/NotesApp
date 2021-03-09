@@ -1,20 +1,20 @@
-body {
+  body {
     margin: 20px auto;
     font-family: 'Lato';
     background: #fff3b0;
     color: #219ebc;
   }
 
-
   .btn-black {
     background-color:#ffafcc;
     color: #FFF;
   }
-    .btn-black:hover {
+
+  .btn-black:hover {
       color: #FFF;
   }
    
-  *{
+  * {
     margin:0;
     padding:0;
   }
@@ -29,22 +29,14 @@ body {
     font-weight: normal;
   }
    
-  ul,li{
+  ul,li {
     list-style:none;
   }
-  ul{
+
+  ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  ul li a{
-    text-decoration:none;
-    color:#000;
-    background:#fcd5ce;
-    display:block;
-    height:10em;
-    width:10em;
-    padding:1em;
   }
   ul li{
     margin:1em;
@@ -54,43 +46,35 @@ body {
     font-weight: bold;
     font-size: 2rem;
   }
+
   p {
     font-family: 'Reenie Beanie';
     font-size: 2rem;
   }
 
   ul li a{
-    text-decoration:none;
-    color:#000;
-    background:#ffc;
-    display:block;
-    height:10em;
-    width:10em;
-    padding:1em;
-    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  }
-
-  ul li a{
     transform: rotate(-6deg);
   }
 
-  ul li:nth-child(even) a{
+  ul li:nth-child(even) a {
     transform:rotate(4deg);
     position:relative;
     top:5px;
   }
-  ul li:nth-child(3n) a{
+
+  ul li:nth-child(3n) a {
     transform:rotate(-3deg);
     position:relative;
     top:-5px;
   }
-  ul li:nth-child(5n) a{
+
+  ul li:nth-child(5n) a {
     transform:rotate(5deg);
     position:relative;
     top:-10px;
   }
 
-  ul li a:hover,ul li a:focus{
+  ul li a:hover,ul li a:focus {
     box-shadow:10px 10px 7px rgba(0,0,0,.7);
     transform: scale(1.25);
     position:relative;
@@ -100,22 +84,23 @@ body {
   ul li a{
     text-decoration:none;
     color:#000;
-    background:#ffc;
+    background:#caffbf;
     display:block;
-    height:10em;
-    width:10em;
+    /* height:10em;
+    width:10em; */
     padding:1em;
     box-shadow: 5px 5px 7px rgba(33,33,33,.7);
     transition: transform .15s linear;
   }
 
-  ul li:nth-child(even) a{
+  ul li:nth-child(even) a {
     position:relative;
     top:5px;
-    background:#cfc;
+    background:#a0c4ff;
   }
-  ul li:nth-child(3n) a{
+
+  ul li:nth-child(3n) a {
     position:relative;
     top:-5px;
-    background:#ccf;
+    background:#bdb2ff;
   }

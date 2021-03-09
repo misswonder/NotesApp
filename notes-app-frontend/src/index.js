@@ -23,10 +23,11 @@ function renderNote(note) {
   content.textContent = `Content: ${note.attributes.content}`
 
   const time = document.createElement("p")
-  time.innerText = `Time: ${note.attributes.created_at}`
+  time.innerText = `Time: ${new Date(note.attributes.created_at).toLocaleDateString()}`
 
   const li = document.createElement("li")
   const ul = document.createElement("ul")
+  ul.className = "col-md-4";
 
   box.append(title, content, time)
   li.appendChild(box)
