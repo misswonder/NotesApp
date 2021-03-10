@@ -52,10 +52,10 @@
     font-size: 2rem;
   }
 
-  ul li a{
+  div.note-card {
     transform: rotate(-6deg);
   }
-
+/* 
   ul li:nth-child(even) a {
     transform:rotate(4deg);
     position:relative;
@@ -72,16 +72,16 @@
     transform:rotate(5deg);
     position:relative;
     top:-10px;
-  }
+  } */
 
-  ul li a:hover,ul li a:focus {
+  div.note-card:focus, div.note-card:hover, .note-card.card-focus {
     box-shadow:10px 10px 7px rgba(0,0,0,.7);
     transform: scale(1.25);
     position:relative;
     z-index:5;
   }
 
-  ul li a{
+  div.note-card {
     text-decoration:none;
     color:#000;
     background:#caffbf;
@@ -93,7 +93,15 @@
     transition: transform .15s linear;
   }
 
-  ul li:nth-child(even) a {
+  .input-focus {
+    outline: -webkit-focus-ring-color auto 1px;
+  }
+
+  .input-span:focus {
+    outline: none;
+  }
+
+  /* ul li:nth-child(even) a {
     position:relative;
     top:5px;
     background:#a0c4ff;
@@ -103,4 +111,8 @@
     position:relative;
     top:-5px;
     background:#bdb2ff;
+  } */
+
+  .style-button{
+    border-radius: 800%;
   }
