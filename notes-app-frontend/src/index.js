@@ -133,22 +133,75 @@ function removeNoteElement(id) {
   document.querySelector(`div[data-id="${id}"]`)?.remove();
 }
 
-document.querySelector('form').addEventListener('submit', handleSubmit)
+const form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
 
+  //debugger
+
+  let usernameInput = event.target.username;
+
   let newUser = {
-    username: " "
-  }
+    username: " ",
+  };
 
   let reqObj = {
-    headers: {"Content-Type": "application/json"},
+    headers: { "Content-Type": "application/json" },
     method: "POST",
-    body: JSON.stringify(newUser)
-  }
+    body: JSON.stringify(newUser),
+  };
 
   fetch(USERS_URL, reqObj)
-  .then(res => res.json())
-  .then(console.log("worked"))
+    .then((res) => res.json())
+    // .then(console.log("worked"))
+    .then(() => {})
+    // .then((usersArray) => {
+    //   let user = usersArray.find(function (user) {
+    //     return user.username === usernameInput.value;
+    //   });
+    //   if (user) {
+    //     usernameInput = " ";
+    //     // slapUser(user);
+    //     localStorage.id = user.id;
+    //     logOutButton();
+    //   }
+    // });
+  event.target.reset;
+}
+
+form.addEventListener("submit", postFetchForSignUp);
+
+function postFetchForSignUp(event) {
+  let usernameInput = event.target.username;
+
+  fetch(USERS_URL, {
+    // First, we make a Post fetch request where we want to store our users
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      username: usernameInput.value,
+    }),
+  })
+    .then((res) => res.json())
+    .then((user) => {
+      localStorage.clear(); // If there was an user signed in, this will clear
+      localStorage.id = user.id; // Then we can store the id we got
+      // slapUser(user);
+      logOutButton();
+    });
+}
+
+function logOutButton() {
+  let logOutButton = document.createElement("button");
+  logOutButton.className = "log-out-button";
+  logOutButton.innerText = "Log Out";
+  form.append(logOutButton);
+  logOutButton.addEventListener("click", (e) => {
+    localStorage.clear(); // We clear localStorage like so
+  });
 }
