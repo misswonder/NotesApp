@@ -132,3 +132,23 @@ function deleteNote(note) {
 function removeNoteElement(id) {
   document.querySelector(`div[data-id="${id}"]`)?.remove();
 }
+
+document.querySelector('form').addEventListener('submit', handleSubmit)
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  let newUser = {
+    username: " "
+  }
+
+  let reqObj = {
+    headers: {"Content-Type": "application/json"},
+    method: "POST",
+    body: JSON.stringify(newUser)
+  }
+
+  fetch(USERS_URL, reqObj)
+  .then(res => res.json())
+  .then(console.log("worked"))
+}

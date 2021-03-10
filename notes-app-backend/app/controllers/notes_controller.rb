@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
     def create
         note = Note.create!({ title: permitted_params['title'], content: permitted_params['content'], user: User.first })
+    
         options = {
             include: [:user]
         }
