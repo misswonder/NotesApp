@@ -22,6 +22,7 @@ function renderNote(note, focus = false) {
   });
 
   const title = document.createElement("h2");
+  title.className = "title";
   title.innerText = `Title: `;
   const titleSpan = document.createElement("span");
   titleSpan.className = "input-span";
@@ -43,6 +44,7 @@ function renderNote(note, focus = false) {
   card.appendChild(title);
 
   const content = document.createElement("p");
+  content.className = "content";
   content.textContent = `Content: `;
   const contentSpan = document.createElement("span");
   contentSpan.className = "input-span";
@@ -64,7 +66,8 @@ function renderNote(note, focus = false) {
   card.appendChild(content);
 
   const time = document.createElement("p");
-  time.innerText = `Time: ${new Date(
+  time.className = "time";
+  time.innerText = `Time Created: ${new Date(
     note.attributes.created_at
   ).toLocaleDateString()}`;
   card.append(time);

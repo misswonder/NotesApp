@@ -7,27 +7,27 @@
 
   .btn-black {
     background-color:#ffafcc;
-    color: #FFF;
+    color: #006d77;
   }
 
   .btn-black:hover {
-      color: #FFF;
+      color: #e63946;
   }
    
   * {
     margin:0;
     padding:0;
   }
-   
-  h2 {
-    font-weight: bold;
-    font-size: 2rem;
+
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .sub-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size : 1.8rem;
   }
    
-  p {
-    font-size: 1rem;
-    font-weight: normal;
-  }
    
   ul,li {
     list-style:none;
@@ -38,37 +38,45 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
   ul li{
     margin:1em;
   }
 
-  h2 {
+  .title {
+    font-family: 'Roboto', sans-serif;;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2rem; 
   }
 
-  p {
-    font-family: 'Reenie Beanie';
-    font-size: 2rem;
+  .content {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  .time {
+    font-family: 'Source Sans Pro', sans-serif;  
+    font-size: 0.85rem;
   }
 
   div.note-card {
     transform: rotate(-6deg);
   }
-/* 
-  ul li:nth-child(even) a {
+
+  /* ul li:nth-child(even) div {
     transform:rotate(4deg);
     position:relative;
     top:5px;
   }
 
-  ul li:nth-child(3n) a {
+  ul li:nth-child(3n) div {
     transform:rotate(-3deg);
     position:relative;
     top:-5px;
   }
 
-  ul li:nth-child(5n) a {
+  ul li:nth-child(5n) div {
     transform:rotate(5deg);
     position:relative;
     top:-10px;
@@ -114,5 +122,12 @@
   } */
 
   .style-button{
-    border-radius: 800%;
+    background-color:#f8edeb;
+    /* border: none; */
+    border-radius: 100%;
+    padding: 8px 20px;
+    /* display: flex;
+    justify-content: center; */
+    position: relative;
+    left: 250px;
   }
