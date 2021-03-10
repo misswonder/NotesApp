@@ -29,7 +29,7 @@
   }
    
    
-  ul,li {
+  /* ul,li {
     list-style:none;
   }
 
@@ -41,7 +41,7 @@
 
   ul li{
     margin:1em;
-  }
+  } */
 
   .title {
     font-family: 'Roboto', sans-serif;;
@@ -64,41 +64,46 @@
     transform: rotate(-6deg);
   }
 
-  /* ul li:nth-child(even) div {
+  .note-container > div:nth-child(even) > .note-card {
     transform:rotate(4deg);
-    position:relative;
-    top:5px;
   }
 
-  ul li:nth-child(3n) div {
+  .note-container > div:nth-child(3n) > .note-card {
     transform:rotate(-3deg);
-    position:relative;
-    top:-5px;
   }
 
-  ul li:nth-child(5n) div {
+  .note-container > div:nth-child(5n) > .note-card {
     transform:rotate(5deg);
-    position:relative;
-    top:-10px;
-  } */
+  }
+  
+  .note-container > div:nth-child(even) > .note-card {
+    background:#b7e4c7;
+  }
+
+  .note-container > div:nth-child(3n) > .note-card {
+    background:#cbc0d3;
+  }
 
   div.note-card:focus, div.note-card:hover, .note-card.card-focus {
     box-shadow:10px 10px 7px rgba(0,0,0,.7);
-    transform: scale(1.25);
+    transform: scale(1.25) !important;
     position:relative;
     z-index:5;
   }
 
   div.note-card {
+    margin: 1em;
     text-decoration:none;
     color:#000;
-    background:#caffbf;
+    background:#fec5bb;
     display:block;
     /* height:10em;
     width:10em; */
     padding:1em;
     box-shadow: 5px 5px 7px rgba(33,33,33,.7);
     transition: transform .15s linear;
+    display: flex;
+    flex-direction: column;
   }
 
   .input-focus {
@@ -123,11 +128,7 @@
 
   .style-button{
     background-color:#f8edeb;
-    /* border: none; */
     border-radius: 100%;
     padding: 8px 20px;
-    /* display: flex;
-    justify-content: center; */
-    position: relative;
-    left: 250px;
+    align-self: flex-end;
   }

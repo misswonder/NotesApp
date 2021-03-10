@@ -32,11 +32,11 @@ function renderNote(note, focus = false) {
     updateNote(note.id, { title: e.target.textContent })
   );
   titleSpan.addEventListener("focus", () => {
-    title.className = "input-focus";
+    title.className = "title input-focus";
     card.className = "note-card card-focus";
   });
   titleSpan.addEventListener("blur", () => {
-    title.className = "";
+    title.className = "title";
     card.className = "note-card";
   });
   title.appendChild(titleSpan);
@@ -54,11 +54,11 @@ function renderNote(note, focus = false) {
     updateNote(note.id, { content: e.target.textContent })
   );
   contentSpan.addEventListener("focus", () => {
-    content.className = "input-focus";
+    content.className = "content input-focus";
     card.className = "note-card card-focus";
   });
   contentSpan.addEventListener("blur", () => {
-    content.className = "";
+    content.className = "content";
     card.className = "note-card";
   });
   content.appendChild(contentSpan);
@@ -71,17 +71,14 @@ function renderNote(note, focus = false) {
     note.attributes.created_at
   ).toLocaleDateString()}`;
   card.append(time);
-
-  const li = document.createElement("li");
-  const ul = document.createElement("ul");
-  ul.className = "col-md-4";
-  ul.dataset.id = note.id;
-
   card.appendChild(delBtn);
-  li.appendChild(card);
-  ul.appendChild(li);
 
-  document.querySelector(".note-container").prepend(ul);
+  const wrapper = document.createElement("div");
+  wrapper.className = "col-md-3";
+  wrapper.dataset.id = note.id;
+  wrapper.appendChild(card);
+
+  document.querySelector(".note-container").prepend(wrapper);
 
   if (focus) {
     titleSpan.focus();
@@ -97,6 +94,7 @@ function updateNote(id, note) {
 
   fetch(NOTES_URL + id, reqObj);
 }
+
 function createNote() {
   let newNote = {
     title: " ",
@@ -124,8 +122,13 @@ function deleteNote(note) {
     },
   })
     .then((res) => res.json())
-    .then(() => {
-      document.querySelector(`ul[data-id="${note.id}"]`)?.remove();
-    })
+    .then(() => removeNoteElement(note.id))
+    // .then(() => {
+    //   document.querySelector(`ul[data-id="${note.id}"]`)?.remove();
+    // })
     .catch((err) => alert("Unable to delete note."));
+}
+
+function removeNoteElement(id) {
+  document.querySelector(`div[data-id="${id}"]`)?.remove();
 }
