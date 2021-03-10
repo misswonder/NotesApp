@@ -2,13 +2,43 @@ const BASE_URL = "http://localhost:3000";
 const USERS_URL = `${BASE_URL}/users/`;
 const NOTES_URL = `${BASE_URL}/notes/`;
 
-const init = () => {
-  fetch(NOTES_URL)
-    .then((res) => res.json())
-    .then((notesData) => notesData.data.forEach((note) => renderNote(note)));
-};
+// VALIDATION
 
-init();
+document.addEventListener('click', (e) => validateForm(e))
+
+
+function validateForm(e) {
+  e.preventDefault()
+  let un = document.loginform.usr.value;
+  let username = "username"; 
+  if ((un == username)) { 
+    // return true;
+    // const init = () => {
+      fetch(NOTES_URL)
+        .then((res) => res.json())
+        .then((notesData) => notesData.data.forEach((note) => renderNote(note)));
+    // };
+  }
+  // else {
+  //     alert ("Login was unsuccessful, please check your username");
+  //     return false;
+  // }
+}
+
+// VALIDATION
+
+
+
+
+
+
+// const init = () => {
+//   fetch(NOTES_URL)
+//     .then((res) => res.json())
+//     .then((notesData) => notesData.data.forEach((note) => renderNote(note)));
+// };
+
+// init();
 
 function renderNote(note, focus = false) {
   const card = document.createElement("div");
