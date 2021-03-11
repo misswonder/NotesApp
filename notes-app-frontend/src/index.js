@@ -79,7 +79,7 @@ function renderNote(note, focus = false) {
   document.querySelector(".note-container").prepend(wrapper);
 
   if (focus) {
-    titleSpan.focus();
+    titleSpan.focus();btn-black
   }
 }
 
@@ -139,24 +139,28 @@ function handleSubmit(event) {
   event.preventDefault();
 
   let usernameInput = event.target.username.value;
+  if (usernameInput !== "") {
 
-  let newUser = {
-    username: usernameInput,
-  };
+    let newUser = {
+      username: usernameInput,
+    };
 
-  let reqObj = {
-    headers: { "Content-Type": "application/json" },
-    method: "POST",
-    body: JSON.stringify(newUser),
-  };
+    let reqObj = {
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
+      body: JSON.stringify(newUser),
+    };
 
-  fetch(USERS_URL, reqObj)
-    .then((res) => res.json())
-    .then(({ data: user }) => {
-      if (user) {
-        login(user);
-      }
-    });
+    fetch(USERS_URL, reqObj)
+      .then((res) => res.json())
+      .then(({ data: user }) => {
+        if (user) {
+          login(user);
+        }
+      });
+  } else {
+    alert("please enter or create an username");
+  }
   event.target.reset();
 }
 
