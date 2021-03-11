@@ -28,13 +28,6 @@
     font-size : 1.8rem;
   }
 
-  /* .description {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: bold;
-    font-size: 1rem;
-    color: #f72585;
-  } */
-
   .title {
     font-family: 'Roboto', sans-serif;;
     font-weight: bold;
@@ -127,8 +120,10 @@
 
   #user-logout {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    /* top: 15px;
+    right: 20px; */
+    top: 35px;
+    right: 75px;
     font-size: 18px;
   } 
 
@@ -143,8 +138,8 @@
   }
 
   .btn-dark {
-    background-color:#a2d2ff;
-    color: #006d77;
+    background-color: #83c5be;
+    color: #023047;
   }
 
   .btn-light {
