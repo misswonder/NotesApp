@@ -65,7 +65,7 @@ function renderNote(note, focus = false) {
 
   const time = document.createElement("p");
   time.className = "time";
-  time.innerText = `Created Time: ${new Date(
+  time.innerText =  `${new Date(
     note.attributes.created_at
   ).toLocaleDateString()}`;
   card.append(time);

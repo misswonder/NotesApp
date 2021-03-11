@@ -1,13 +1,13 @@
   body {
     margin: 20px auto;
     font-family: 'Lato';
-    background: #fff3b0;
-    color: #219ebc;
+    background: #EEEEEE;
+    color: #114B5F;
   }
 
   .btn-black {
-    background-color:#ffafcc;
-    color: #006d77;
+    background-color: #83c5be;
+    color: #023047;
   }
 
   .btn-black:hover {
@@ -153,15 +153,19 @@
   }
 
   #user-name {
-    color:#e36414;
+    color: #192A51;
     font-family: 'Shippori Mincho', serif;
     font-weight: bold;
     font-size: 2.5rem;
   }
 
   #greeting {
-    color:#1d3557;
+    color: #A8AFB3;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: bold;
     font-size: 1.5rem;
+  }
+
+  .container{
+    background-color: #A44200;
   }
