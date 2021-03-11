@@ -2,13 +2,11 @@ const BASE_URL = "http://localhost:3000";
 const USERS_URL = `${BASE_URL}/users/`;
 const NOTES_URL = `${BASE_URL}/notes/`;
 
-const init = () => {
-  fetch(NOTES_URL)
+const loadNotes = (user) => {
+  fetch(`${NOTES_URL}?user_id=${user.id}`)
     .then((res) => res.json())
     .then((notesData) => notesData.data.forEach((note) => renderNote(note)));
 };
-
-init();
 
 function renderNote(note, focus = false) {
   const card = document.createElement("div");
@@ -29,7 +27,7 @@ function renderNote(note, focus = false) {
   titleSpan.innerText = note.attributes.title;
   titleSpan.contentEditable = true;
   titleSpan.addEventListener("input", (e) =>
-    updateNote(note.id, { title: e.target.textContent })
+    updateNote(note.id, { title: e.target.innerText })
   );
   titleSpan.addEventListener("focus", () => {
     title.className = "title input-focus";
@@ -51,7 +49,7 @@ function renderNote(note, focus = false) {
   contentSpan.innerText = note.attributes.content;
   contentSpan.contentEditable = true;
   contentSpan.addEventListener("input", (e) =>
-    updateNote(note.id, { content: e.target.textContent })
+    updateNote(note.id, { content: e.target.innerText })
   );
   contentSpan.addEventListener("focus", () => {
     content.className = "content input-focus";
@@ -67,7 +65,7 @@ function renderNote(note, focus = false) {
 
   const time = document.createElement("p");
   time.className = "time";
-  time.innerText = `Time Created: ${new Date(
+  time.innerText = `Created Time: ${new Date(
     note.attributes.created_at
   ).toLocaleDateString()}`;
   card.append(time);
@@ -99,6 +97,7 @@ function createNote() {
   let newNote = {
     title: " ",
     content: " ",
+    user_id: localStorage.id,
   };
 
   let reqObj = {
@@ -139,12 +138,10 @@ form.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
 
-  //debugger
-
-  let usernameInput = event.target.username;
+  let usernameInput = event.target.username.value;
 
   let newUser = {
-    username: " ",
+    username: usernameInput,
   };
 
   let reqObj = {
@@ -155,53 +152,39 @@ function handleSubmit(event) {
 
   fetch(USERS_URL, reqObj)
     .then((res) => res.json())
-    // .then(console.log("worked"))
-    .then(() => {})
-    // .then((usersArray) => {
-    //   let user = usersArray.find(function (user) {
-    //     return user.username === usernameInput.value;
-    //   });
-    //   if (user) {
-    //     usernameInput = " ";
-    //     // slapUser(user);
-    //     localStorage.id = user.id;
-    //     logOutButton();
-    //   }
-    // });
-  event.target.reset;
-}
-
-form.addEventListener("submit", postFetchForSignUp);
-
-function postFetchForSignUp(event) {
-  let usernameInput = event.target.username;
-
-  fetch(USERS_URL, {
-    // First, we make a Post fetch request where we want to store our users
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      username: usernameInput.value,
-    }),
-  })
-    .then((res) => res.json())
-    .then((user) => {
-      localStorage.clear(); // If there was an user signed in, this will clear
-      localStorage.id = user.id; // Then we can store the id we got
-      // slapUser(user);
-      logOutButton();
+    .then(({ data: user }) => {
+      if (user) {
+        login(user);
+      }
     });
+  event.target.reset();
 }
 
-function logOutButton() {
-  let logOutButton = document.createElement("button");
-  logOutButton.className = "log-out-button";
-  logOutButton.innerText = "Log Out";
-  form.append(logOutButton);
-  logOutButton.addEventListener("click", (e) => {
-    localStorage.clear(); // We clear localStorage like so
-  });
+function login(user) {
+  localStorage.id = user.id;
+  document.getElementById("user-login").style.display = "none";
+  document.getElementById("user-name").textContent = user.attributes.username;
+  document.getElementById("user-info").style.display = "block";
+  document.getElementById("user-notes").style.display = "block";
+  loadNotes(user);
+}
+
+function logout() {
+  document.getElementById("user-info").style.display = "none";
+  document.getElementById("user-login").style.display = "";
+  localStorage.clear();
+  document.querySelector(".note-container").innerHTML = "";
+  document.getElementById("user-notes").style.display = "none";
+}
+
+document.getElementById("user-logout").addEventListener("click", logout);
+
+if (localStorage.id) {
+  fetch(USERS_URL + localStorage.id)
+    .then((res) => res.json())
+    .then(({ data: user }) => {
+      if (user) {
+        login(user);
+      }
+    });
 }

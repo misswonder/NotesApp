@@ -11,7 +11,7 @@
   }
 
   .btn-black:hover {
-      color: #e63946;
+    color: #e63946;
   }
    
   * {
@@ -27,19 +27,12 @@
     font-family: 'Montserrat', sans-serif;
     font-size : 1.8rem;
   }
-   
-  /* ul,li {
-    list-style:none;
-  }
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  ul li{
-    margin:1em;
+  /* .description {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #f72585;
   } */
 
   .title {
@@ -109,25 +102,66 @@
     outline: -webkit-focus-ring-color auto 1px;
   }
 
+  .input-span {
+    white-space: pre-wrap;
+  }
   .input-span:focus {
     outline: none;
   }
-
-  /* ul li:nth-child(even) a {
-    position:relative;
-    top:5px;
-    background:#a0c4ff;
-  }
-
-  ul li:nth-child(3n) a {
-    position:relative;
-    top:-5px;
-    background:#bdb2ff;
-  } */
 
   .style-button{
     background-color:#f8edeb;
     border-radius: 100%;
     padding: 8px 20px;
     align-self: flex-end;
+  }
+  
+  #user-info {
+    display: none;
+  }
+
+  #user-login {
+    max-width: 300px;
+    margin: auto;
+  }
+
+  #user-logout {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 18px;
+  } 
+
+  #user-notes {
+    display: none;
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-dark {
+    background-color:#a2d2ff;
+    color: #006d77;
+  }
+
+  .btn-light {
+    background-color:#83c5be;
+    color:#023047;
+  }
+
+  #user-name {
+    color:#e36414;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+
+  #greeting {
+    color:#1d3557;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
   }

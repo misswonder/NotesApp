@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
     def create
-        note = Note.create!({ title: permitted_params['title'], content: permitted_params['content'], user: User.first })
+        note = Note.create!({ title: permitted_params['title'], content: permitted_params['content'], user: User.find(permitted_params['user_id']) })
     
         options = {
             include: [:user]
@@ -9,7 +9,7 @@ class NotesController < ApplicationController
     end
 
     def index 
-        notes = Note.all
+        notes = Note.where(user_id: params['user_id'])
         render json: NoteSerializer.new(notes)
     end 
 
@@ -34,6 +34,6 @@ class NotesController < ApplicationController
     end
 
     def permitted_params
-        params.require(:note).permit(:title, :content)
+        params.require(:note).permit(:title, :content, :user_id)
     end
 end

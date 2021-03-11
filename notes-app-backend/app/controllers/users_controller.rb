@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     end 
 
     def create
-        user = User.create!({ username: permitted_params['username'] })
+        user = User.find_or_create_by!({ username: permitted_params['username'] })
         options = {
             include: [:notes]
         }

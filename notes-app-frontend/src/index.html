@@ -15,19 +15,26 @@
       <div class="container">
         <h1 class="display-3"><strong>NotesApp</strong></h1>
         <p class="sub-header"><em>💛 Welcome to Our NotesApp! 💛</p></em>
-        <h4>Login to see your notes</h3>
-          <br>
-        <form id="user-login">
-          <input autocomplete="off" type="text" placeholder="Enter your username" name="username">
-          <input type="submit">
-        </form> 
+        <!-- <p class="description">Please log in or create an username ⬇️</p> -->
         <br>
-          <a onclick="createNote()" class="btn btn-black btn-lg" href="#" role="button">Add a Note 📝</a>  
+        <form id="user-login" class="input-group">
+          <input class="form-control mb-2" autocomplete="off" type="text" placeholder="Enter or create your username" name="username">
+          <div class="input-group-append">
+            <button class="btn btn-dark btn-md" type="submit">Login</button>
+          </div>
+        </form>
+        <div id="user-info">
+          <span id="greeting"><em>Hi! Bonjour! 你好! </em></span> 
+            <span id="user-name"></span>
+          <button class= "btn btn-light btn-md" id="user-logout">Logout</button>
+        </div>
         </p> 
         </div>
       </div>
-      
-      <div class="container">
+      <div id="user-notes" class="container">
+        <div class="center">
+          <a onclick="createNote()" class="btn btn-black btn-lg" href="#" role="button">Add a Note 📝</a>  
+        </div>
         <div class="note-container row"></div>
       </div>
       <!-- <ul>
