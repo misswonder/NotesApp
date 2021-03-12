@@ -1,20 +1,25 @@
 <!doctype html>
-<html lang="en" style = "height:100%">
+<html lang="en" style = "height:150%">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>NotesApp</title>
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
     <title>NotesApp</title>
   </head>
-  <body style = "background: linear-gradient(135deg, #A44200 10%, #822e81 100%)">
+  <body style = "background: linear-gradient(135deg, #A44200 10%, #822e81 90%)">
     <div class="jumbotron text-center">
-      <div class="border-bottom" class="container">
+
+      <div  class="container">
         <h1 class="display-3"><strong>NotesApp</strong></h1>
-        <p class="sub-header"><em> Welcome to Our NotesApp! </p></em>
+        <p class="sub-header"><em> For those of us who always forget.... </p></em>
+
         <br>
         <form id="user-login" class="input-group">
           <input class="form-control mb-2" autocomplete="off" type="text" placeholder="Enter or create your username" name="username">
@@ -23,7 +28,7 @@
           </div>
         </form>
         <div id="user-info">
-          <span id="greeting"><em>Hi! Bonjour! 你好! </em></span> 
+          <span class="w3-animate-fading" id="greeting"><em>Hi!    Bonjour!    你好! </em></span><br> 
             <span id="user-name"></span>
           <button class= "btn btn-light btn-md" id="user-logout">Logout</button>
         </div>
@@ -33,9 +38,9 @@
       <div id="user-notes" class="container">
         <div class="center">
           <a onclick="createNote()" class="btn btn-black btn-lg" href="#" role="button">Add a Note</a>  
-        </div>
+        </div><br>
         <div class="note-container row"></div>
-      </div>
+     </div>
       <!-- <ul>
         <li>
           <a href="#">
@@ -70,6 +75,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
   </body>
   <script src="index.js"></script>
 </html>
