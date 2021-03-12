@@ -43,6 +43,7 @@
   .time {
     font-family: 'Source Sans Pro', sans-serif;  
     font-size: 0.85rem;
+   
   }
 
   div.note-card {
@@ -162,5 +163,6 @@
   }
 
   .container{
-    background-color: #A44200;
+    /* background-color: #A44200; */
+    filter: drop-shadow(0 0 0.75rem crimson);
   }
