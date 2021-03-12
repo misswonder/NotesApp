@@ -124,10 +124,10 @@
 
   #user-logout {
     position: absolute;
-    /* top: 15px;
-    right: 20px; */
-    top: 35px;
-    right: 75px;
+    top: 15px;
+    right: 20px;
+    /* top: 35px;
+    right: 75px; */
     font-size: 18px;
   } 
 
@@ -169,7 +169,7 @@
   .container{
     /* background-color: #A44200; */
     filter: drop-shadow(0 0 0.75rem crimson);
-    padding-top: 100px;
+    padding-top: 100px; 
   }
 
 
