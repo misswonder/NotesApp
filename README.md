@@ -9,7 +9,7 @@
   <h3 align="center">NotesApp</h3>
 
   <p align="center">
-    OUR MISSION: An application that allows users to take and delete notes as they need.  
+    OUR MISSION: An application that allows users create notes as they need. 
     <br />
     <br />
     <a href="https://www.youtube.com/watch?v=QuEI20XRdAA&t=11s">View Demo</a>
@@ -39,7 +39,7 @@
 
 <img src="homepage.png" alt="Homepage" width="100%" >
 
-Fashop is a full-stack web application that allows users to take notes. Users can login an account, take, update and delete notes as they need.  
+NotesApp is a full-stack web application that allows users to take notes. Users can login an account, create, read, update and delete notes as they need.  
 
 Key Features:
 
