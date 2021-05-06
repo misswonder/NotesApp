@@ -61,7 +61,7 @@ Key Features:
 
 1. Clone the repo
    ```sh
-   git clone git@github.com:misswonder/Fashop-frontend.git
+   git clone git@github.com:misswonder/NotesApp.git
    ```
 2. Navigate to NotesApp backend and Install GEM packages
    ```sh
