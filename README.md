@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/misswonder/NotesApp">
-    <img src="NotesApp/logo.png" alt="Logo" width="auto" height="140">
+    <img src="logo.png" alt="Logo" width="auto" height="140">
   </a>
 
   <h3 align="center">NotesApp</h3>
@@ -37,7 +37,7 @@
 
 ## About The Project
 
-<img src="NotesApp/homepage.png" alt="Homepage" width="100%" >
+<img src="homepage.png" alt="Homepage" width="100%" >
 
 Fashop is a full-stack web application that allows users to take notes. Users can login an account, take, update and delete notes as they need.  
 
