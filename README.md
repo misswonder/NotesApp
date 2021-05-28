@@ -46,7 +46,7 @@ Key Features:
 - Desktop app
 - Full CRUD capability options
 - Ability to create a new note
-- Ability to read all the notes from an user
+- Ability to read all the notes from a user
 - Ability to update an exisiting note 
 - Ability to delete an exisiting note 
 
